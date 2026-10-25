@@ -1,9 +1,10 @@
 {
   "textOnly": true,
-  "koreanDocuments": 4666,
+  "koreanDocuments": 4889,
   "koreanInventory": 5628,
-  "koreanPartial": 210,
-  "additionalForeignDocuments": 2336,
+  "koreanPartial": 214,
+  "additionalForeignDocuments": 2317,
+  "withdrawnForeignDocuments": 19,
   "images": 0,
   "pdfs": 0,
   "complete": false
