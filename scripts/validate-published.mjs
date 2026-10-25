@@ -29,10 +29,11 @@ for(const relative of files){
  assertPublisherTags(html);
  assert(!/<(?:img|svg|picture|object|embed|video|audio|canvas)\b/i.test(html),'Non-text markup: '+relative);
  assert(!/<\/article>}/.test(html),'Unexpected trailing template character: '+relative);
- assert(!/\sdownload(?:=|[\s>])|href="[^"\n]*\.pdf(?:[?#"])/i.test(html),'PDF/download link: '+relative);
+ assert(!/<a\b[^>]*\bdownload(?:[\s=>])|href="[^"\n]*\.pdf(?:[?#"])/i.test(html),'PDF/download link: '+relative);
  assert(html.includes('https://nanalab.kr/apps/'),'Missing More Apps: '+relative);
  const canonical=html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
  assert(canonical?.startsWith(base.href),'Wrong canonical base: '+relative);
+ assert(!canonical.endsWith('/index.html'),'Directory canonical must use a trailing slash: '+relative);
  const expected=new URL(relative,base).href;
  assert(canonical===expected||relative.endsWith('index.html')&&canonical===expected.slice(0,-10),'Wrong canonical route: '+relative);
  for(const [,article] of html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)){
@@ -53,6 +54,7 @@ assert.equal(new Set(locations).size,locations.length);
 const mapped=new Set();
 for(const location of locations){
  assert(location.startsWith(base.href),'Wrong sitemap base');
+ assert(!location.endsWith('/index.html'),'Directory sitemap URL must use a trailing slash: '+location);
  let file=decodeURIComponent(new URL(location).pathname.slice(base.pathname.length));
  if(!file||file.endsWith('/'))file+='index.html';
  assert(files.has(file),'Missing sitemap page: '+file);mapped.add(file);
