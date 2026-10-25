@@ -2,17 +2,17 @@
   "schemaVersion": 1,
   "asOf": "2026-10-25",
   "publicBase": "https://nanalab.kr/world-law-portal/",
-  "htmlPages": 5205,
-  "sitemapUrls": 5205,
-  "koreanCurrentLawTexts": 4182,
+  "htmlPages": 6220,
+  "sitemapUrls": 6220,
+  "koreanCurrentLawTexts": 4312,
   "koreanOfficialInventory": 5628,
-  "koreanPartialTexts": 203,
+  "koreanPartialTexts": 204,
   "existingGlobalDocuments": 34,
   "collectionComplete": false,
   "textOnly": true,
   "pdfFiles": 0,
   "imageFiles": 0,
-  "publisherTagPages": 5205,
+  "publisherTagPages": 6220,
   "lawTranslation": false,
   "interfaceLanguages": [
     "ko",
@@ -21,5 +21,5 @@
     "es"
   ],
   "publisher": "NaNaCompany",
-  "additionalForeignDocuments": 984
+  "additionalForeignDocuments": 1869
 }
