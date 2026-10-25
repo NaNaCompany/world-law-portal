@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://nanalab.kr/world-law-portal/sitemap.xml
