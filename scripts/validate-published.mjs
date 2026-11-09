@@ -22,7 +22,8 @@ async function walk(folder){
 }
 await walk(root);
 assert(bytes<1024**3,'GitHub Pages published site must remain below 1 GiB');
-let htmlPages=0,checkedLinks=0;
+let htmlPages=0,checkedLinks=0,redirectPages=0;
+const canonicalPages=new Set();
 for(const relative of files){
  if(!relative.endsWith('.html'))continue;
  const html=await fs.readFile(path.join(root,relative),'utf8');htmlPages++;
@@ -32,10 +33,17 @@ for(const relative of files){
  assert(!/<a\b[^>]*\bdownload(?:[\s=>])|href="[^"\n]*\.pdf(?:[?#"])/i.test(html),'PDF/download link: '+relative);
  assert(html.includes('https://nanalab.kr/apps/'),'Missing More Apps: '+relative);
  const canonical=html.match(/<link rel="canonical" href="([^"]+)"/)?.[1];
- assert(canonical?.startsWith(base.href),'Wrong canonical base: '+relative);
+ const migratedKorean=relative.startsWith('kr/laws/')&&/^https:\/\/nanalab\.kr\/world-law-kr-(?:acts|orders)\//.test(canonical||'');
+ if(migratedKorean){
+  assert(html.includes('http-equiv="refresh"')&&html.includes(canonical),'Invalid Korean migration redirect: '+relative);
+  redirectPages++;
+ }else{
+  assert(canonical?.startsWith(base.href),'Wrong canonical base: '+relative);
+  canonicalPages.add(relative);
+ }
  assert(!canonical.endsWith('/index.html'),'Directory canonical must use a trailing slash: '+relative);
  const expected=new URL(relative,base).href;
- assert(canonical===expected||relative.endsWith('index.html')&&canonical===expected.slice(0,-10),'Wrong canonical route: '+relative);
+ assert(migratedKorean||canonical===expected||relative.endsWith('index.html')&&canonical===expected.slice(0,-10),'Wrong canonical route: '+relative);
  for(const [,article] of html.matchAll(/<article\b[^>]*>([\s\S]*?)<\/article>/g)){
   assert(!/<script\b|<[^>]+\son[a-z]+\s*=|(?:href|src)="(?:javascript|data):/i.test(article),'Active original body: '+relative);
  }
@@ -59,8 +67,10 @@ for(const location of locations){
  if(!file||file.endsWith('/'))file+='index.html';
  assert(files.has(file),'Missing sitemap page: '+file);mapped.add(file);
 }
-assert.equal(mapped.size,htmlPages,'Every HTML page must appear in the root sitemap');
+assert.equal(mapped.size,canonicalPages.size,'Every canonical HTML page must appear in the root sitemap');
+for(const page of canonicalPages)assert(mapped.has(page),'Canonical HTML page missing from sitemap: '+page);
+for(const page of mapped)assert(canonicalPages.has(page),'Redirect must not appear in sitemap: '+page);
 for(const language of ['', 'en/', 'es/', 'zh/'])assert(mapped.has(language+'index.html'));
 const scope=JSON.parse(await fs.readFile(path.join(root,'collection-scope.json'),'utf8'));
 assert(scope.textOnly===true&&scope.pdfsProvided===false&&scope.imagesProvided===false);
-console.log(JSON.stringify({passed:true,htmlPages,sitemapUrls:locations.length,checkedLinks,publisherTagPages:htmlPages,pdfFiles:0,imageFiles:0,totalBytes:bytes,base:base.href},null,2));
+console.log(JSON.stringify({passed:true,htmlPages,redirectPages,canonicalPages:canonicalPages.size,sitemapUrls:locations.length,checkedLinks,publisherTagPages:htmlPages,pdfFiles:0,imageFiles:0,totalBytes:bytes,base:base.href},null,2));

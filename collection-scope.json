@@ -14,7 +14,10 @@
       "country": "US",
       "status": "partial",
       "scope": "미국 연방 법률 원문 발췌 및 법률편집물 각 1건. 주법·규칙 전수 제외",
-      "bulk": "https://www.govinfo.gov/bulkdata/"
+      "bulk": "https://www.govinfo.gov/bulkdata/",
+      "addedDocuments": 60,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
     },
     {
       "country": "ES",
@@ -30,15 +33,21 @@
     },
     {
       "country": "JP",
-      "status": "research-only",
-      "scope": "법령 원문 재이용 근거 연구. 공개 법령 본문 없음.",
-      "rights": "https://laws.e-gov.go.jp/law/345AC0000000048"
+      "status": "partial",
+      "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
+      "rights": "https://laws.e-gov.go.jp/law/345AC0000000048",
+      "addedDocuments": 94,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
     },
     {
       "country": "CN",
-      "status": "research-only",
-      "scope": "법령 원문 재이용 근거 확인. 별도 확보한 텍스트는 공개 전 검증 대상이며 이 기존 목록의 공개 문서 수에 포함하지 않습니다.",
-      "rights": "https://www.ncac.gov.cn/xxfb/flfg/flfg_532/202103/t20210309_50530.html"
+      "status": "partial",
+      "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
+      "rights": "https://www.ncac.gov.cn/xxfb/flfg/flfg_532/202103/t20210309_50530.html",
+      "addedDocuments": 6,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
     },
     {
       "country": "CA",
@@ -46,6 +55,104 @@
       "scope": "Official frequently accessed federal Acts and Regulations. Retained original text is listed in catalog.json; PDF copies are not offered.",
       "notIncluded": "All Canadian federal legislation, provinces and territories, all historical versions.",
       "rights": "https://laws-lois.justice.gc.ca/eng/regulations/si-97-5/FullText.html"
+    },
+    {
+      "country": "AD",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "BA",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "CZ",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "GR",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "HR",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "IE",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "IS",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "LV",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "NO",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "PL",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "PT",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "RS",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "SE",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "SI",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
     }
   ],
   "collectionPolicy": {
@@ -63,5 +170,7 @@
   "textOnly": true,
   "imagesProvided": false,
   "pdfsProvided": false,
-  "sourcePdfCopiesDisposed": true
+  "sourcePdfCopiesDisposed": true,
+  "additionsCatalog": "additions-catalog.json",
+  "additionsAsOf": "2026-11-09T22:52:51Z"
 }
