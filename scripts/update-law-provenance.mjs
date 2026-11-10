@@ -1,0 +1,38 @@
+// Apply reviewed public provenance corrections without changing a legal text or navigation.
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import assert from 'node:assert/strict';
+import { fileURLToPath } from 'node:url';
+import { renderReuseSection } from './reuse-provenance.mjs';
+const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+assert(process.argv.length === 3, 'Usage: node scripts/update-law-provenance.mjs reviewed-corrections.json');
+const corrections = JSON.parse(await fs.readFile(process.argv[2], 'utf8'));
+assert(Array.isArray(corrections));
+const registryPath = path.join(root, 'additions-catalog.json');
+const registry = JSON.parse(await fs.readFile(registryPath, 'utf8'));
+const expected = ['id','sourcePage','textSha256','sourceSha256'];
+const editable = ['siteTermsReview','rightsEvidenceUrls','reuseConditions'];
+const prepared = [];
+const ids = new Set();
+for (const correction of corrections) {
+ assert(!ids.has(correction.id), 'Repeated correction'); ids.add(correction.id);
+ assert(Object.keys(correction).every(k => expected.includes(k) || editable.includes(k)), 'Unsupported field');
+ const record = registry.documents.find(d => d.id === correction.id);
+ assert(record, 'Unknown document');
+ for (const key of expected) assert.equal(correction[key], record[key], 'Source identity mismatch: ' + key);
+ assert(typeof correction.siteTermsReview === 'string' && correction.siteTermsReview.trim());
+ assert(Array.isArray(correction.rightsEvidenceUrls) && correction.rightsEvidenceUrls.length);
+ assert(Array.isArray(correction.reuseConditions) && correction.reuseConditions.every(t => typeof t === 'string' && t.trim()));
+ for (const key of editable) record[key] = correction[key];
+ const file = path.join(root, record.html);
+ const before = await fs.readFile(file, 'utf8');
+ const pattern = /<section class="reuse-conditions">[\s\S]*?<\/section>/g;
+ assert.equal([...before.matchAll(pattern)].length, 1, 'Expected one reuse section');
+ const after = before.replace(pattern, renderReuseSection(record));
+ assert.equal(before.replace(pattern, ''), after.replace(pattern, ''), 'Non-provenance content changed');
+ assert.equal(before.match(/<article\b[\s\S]*?<\/article>/)?.[0], after.match(/<article\b[\s\S]*?<\/article>/)?.[0], 'Legal text changed');
+ prepared.push({file, after});
+}
+for (const {file, after} of prepared) await fs.writeFile(file, after);
+await fs.writeFile(registryPath, JSON.stringify(registry, null, 2) + '\n');
+console.log(JSON.stringify({updated: [...ids], legalTextChanged: false}, null, 2));

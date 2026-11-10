@@ -15,7 +15,7 @@
       "status": "partial",
       "scope": "미국 연방 법률 원문 발췌 및 법률편집물 각 1건. 주법·규칙 전수 제외",
       "bulk": "https://www.govinfo.gov/bulkdata/",
-      "addedDocuments": 93,
+      "addedDocuments": 112,
       "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
       "additionsCatalog": "additions-catalog.json"
     },
@@ -164,7 +164,7 @@
     {
       "country": "CH",
       "status": "partial",
-      "addedDocuments": 2,
+      "addedDocuments": 13,
       "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
       "additionsCatalog": "additions-catalog.json"
     },
@@ -202,6 +202,27 @@
       "addedDocuments": 1,
       "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
       "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "BE",
+      "status": "partial",
+      "addedDocuments": 1,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "IT",
+      "status": "partial",
+      "addedDocuments": 2,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
+    },
+    {
+      "country": "LI",
+      "status": "partial",
+      "addedDocuments": 2,
+      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
+      "additionsCatalog": "additions-catalog.json"
     }
   ],
   "collectionPolicy": {
@@ -221,5 +242,5 @@
   "pdfsProvided": false,
   "sourcePdfCopiesDisposed": true,
   "additionsCatalog": "additions-catalog.json",
-  "additionsAsOf": "2026-11-09T23:30:53Z"
+  "additionsAsOf": "2026-11-09T23:58:47Z"
 }
