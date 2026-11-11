@@ -1,0 +1,8 @@
+candidate*/
+transfer*/
+*checkpoint*/
+__pycache__/
+*.pyc
+*.json
+*.html
+*.tar.gz

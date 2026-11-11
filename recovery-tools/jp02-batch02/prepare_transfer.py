@@ -1,0 +1,16 @@
+"""Prepare bounded local packets only after independently approved frozen candidate."""
+import pathlib,json,hashlib,argparse
+W=pathlib.Path(__file__).resolve().parent;O=W/'candidate-v3';A=O/'audit';sha=lambda b:hashlib.sha256(b).hexdigest();read=lambda p:json.loads(p.read_text())
+p=argparse.ArgumentParser();p.add_argument('--review',type=pathlib.Path,required=True);p.add_argument('--review-sha256',required=True);args=p.parse_args();assert sha(args.review.read_bytes())==args.review_sha256
+review=read(args.review);assert review['passed'] is True
+for side in ['child','root']:assert review[side+'FileManifestSha256']==sha((A/(side+'-file-sha256.json')).read_bytes())
+summary=read(A/'summary.json');T=W/'transfer-v3';assert not T.exists(),'Immutable packet directory exists';plans={}
+for side,repo in [('child','world-law-jp-02'),('root','world-law-portal')]:
+ manifest=read(A/(side+'-file-sha256.json'));baseline=read(A/(side+'-baseline-files.json'));actual={p.relative_to(O/side).as_posix():sha(p.read_bytes()) for p in (O/side).rglob('*') if p.is_file()};assert actual==manifest
+ assert not set(baseline)-set(manifest);delta=sorted(k for k,v in manifest.items() if baseline.get(k)!=v);out=T/side;out.mkdir(parents=True);requests=[];tree=[]
+ for i,name in enumerate(delta,1):
+  raw=(O/side/name).read_bytes();assert sha(raw)==manifest[name];gitsha=hashlib.sha1(b'blob '+str(len(raw)).encode()+b'\0'+raw).hexdigest();payload={'repository_full_name':'NaNaCompany/'+repo,'content':raw.decode('utf-8',errors='strict'),'encoding':'utf-8'};serialized=json.dumps(payload,ensure_ascii=False,separators=(',',':')).encode();assert len(serialized)+65536<=16777216
+  f=f'blob-{i:03}.json';(out/f).write_bytes(serialized);requests.append({'path':name,'requestFile':f,'requestSha256':sha(serialized),'requestBytes':len(serialized),'reserveBytes':65536,'expectedGitBlobSha':gitsha,'fileSha256':manifest[name],'fileBytes':len(raw)});tree.append({'path':name,'mode':'100644','type':'blob','sha':gitsha})
+ payload={'repository_full_name':'NaNaCompany/'+repo,'base_tree_sha':summary['expectedTrees'][side],'tree_elements':tree};raw=json.dumps(payload,separators=(',',':')).encode();assert len(raw)+65536<=524288;(out/'tree-request.json').write_bytes(raw)
+ plan={'state':'independently-reviewed-local-packets-not-published','externalWrites':False,'repository':repo,'expectedHead':summary['expectedHeads'][side],'expectedTree':summary['expectedTrees'][side],'reviewSha256':args.review_sha256,'fullFileManifestSha256':sha((A/(side+'-file-sha256.json')).read_bytes()),'wholeFileBlobRequests':requests,'treeRequestFile':'tree-request.json','treeRequestSha256':sha(raw),'treeRequestBytes':len(raw),'requirements':['Fresh expected-head CAS controlled by parent','Verify returned blob SHAs and complete resulting tree','Child actual live proof before root publication','No partial main or settings updates']};(out/'transfer-plan.json').write_text(json.dumps(plan,indent=2)+'\n');plans[side]={'files':len(delta),'maxRequestBytes':max(x['requestBytes'] for x in requests),'treeBytes':len(raw),'transferPlanSha256':sha((out/'transfer-plan.json').read_bytes())}
+(T/'summary.json').write_text(json.dumps(plans,indent=2)+'\n');print(json.dumps(plans))
