@@ -36,14 +36,14 @@
       "status": "partial",
       "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
       "rights": "https://laws.e-gov.go.jp/law/345AC0000000048",
-      "addedDocuments": 219,
-      "addedDocumentScope": "190 corrected snapshots in JP01 plus29 selected editions in JP02:19 newly covered laws and10 additional newer editions. All400 existing root Japanese articles remain; earlier editions keep their original URLs. Figures, tables and formulas are omitted with notices; one JP02 official source is itself an excerpt. No complete national corpus or legal-force certification.",
+      "addedDocuments": 266,
+      "addedDocumentScope": "190 corrected snapshots in JP01 plus 76 selected editions in JP02. All400 existing root Japanese articles and earlier URLs remain. Per-page observation dates and original excerpt notices are preserved. Tables, figures and formulas are omitted with notices; not a complete national corpus or legal-force certification.",
       "additionsCatalog": "additions-catalog.json",
       "localLawDocuments": 400,
-      "externalLawDocuments": 219,
-      "aggregateLawDocuments": 619,
+      "externalLawDocuments": 266,
+      "aggregateLawDocuments": 666,
       "localAddedDocuments": 0,
-      "externalAddedDocuments": 219,
+      "externalAddedDocuments": 266,
       "canonicalRepositories": [
         "world-law-portal",
         "world-law-jp-01",
@@ -51,14 +51,24 @@
       ],
       "routingManifest": "jp190-routes.json",
       "editionCoverage": {
-        "uniqueLawIDs": 609,
-        "editionPages": 619,
-        "currentEditionsMatchedToCensus": 609,
+        "uniqueLawIDs": 656,
+        "editionPages": 666,
+        "currentEditionsMatchedToCensus": 656,
         "currentEditionsBeforeBatch": 580,
-        "scopeAsOf": "2026-11-11T01:51:36.172244+00:00",
-        "scope": "Current-edition match against dated official census metadata, not a complete-text or legal-force certification",
-        "newlyCoveredLawIDs": 19,
-        "additionalNewerEditions": 10
+        "scopeAsOf": "2026-11-11T02:53:12.314745+00:00",
+        "scope": "Original same-day complete national API inventory, with all Act-containing classifications replaced by freshly fetched Act inventory. Non-Act baseline not refreshed; no legal-currentness certification. Per-page observations are retained. API metadata is not certification of current legal force.",
+        "newlyCoveredLawIDs": 66,
+        "additionalNewerEditions": 10,
+        "observationScope": {
+          "earliest": "2026-11-11T01:51:36.172244+00:00",
+          "latest": "2026-11-11T02:53:12.314745+00:00",
+          "observations": [
+            "2026-11-11T01:51:36.172244+00:00",
+            "2026-11-11T02:53:12.314745+00:00"
+          ],
+          "meaning": "Per-document dated API metadata observations; no certification of current legal force."
+        },
+        "baselineMeaning": "currentEditionsBeforeBatch=580 is the original pre-JP02-series current-edition baseline, not the prior incremental batch. newlyCoveredLawIDs and additionalNewerEditions are cumulative across JP02 batches."
       }
     },
     {
