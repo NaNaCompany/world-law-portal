@@ -29,15 +29,15 @@
     "world-law-kr-acts",
     "world-law-kr-orders"
   ],
-  "lastAdditionAt": "2026-11-11T02:56:21.717774+00:00",
-  "additionsCatalogDocuments": 432,
-  "aggregateAdditionalForeignDocuments": 2749,
+  "lastAdditionAt": "2026-11-11T03:35:02.804650+00:00",
+  "additionsCatalogDocuments": 530,
+  "aggregateAdditionalForeignDocuments": 2847,
   "localLawDocuments": 2517,
   "externalJp190Documents": 190,
-  "aggregateLawDocuments": 2783,
+  "aggregateLawDocuments": 2881,
   "localAdditionsCatalogDocuments": 166,
-  "externalAdditionsCatalogDocuments": 266,
-  "aggregateAdditionsCatalogDocuments": 432,
+  "externalAdditionsCatalogDocuments": 364,
+  "aggregateAdditionsCatalogDocuments": 530,
   "localCanonicalPages": 2522,
   "localHtmlPages": 8340,
   "localRedirectPages": 5818,
@@ -57,26 +57,33 @@
     "articles": 190
   },
   "fullSplitComplete": false,
-  "externalLawDocuments": 266,
-  "externalJp02Documents": 76,
+  "externalLawDocuments": 364,
+  "externalJp02Documents": 174,
   "japaneseEditionCoverage": {
-    "uniqueLawIDs": 656,
-    "editionPages": 666,
-    "currentEditionsMatchedToCensus": 656,
+    "uniqueLawIDs": 754,
+    "editionPages": 764,
+    "currentEditionsMatchedToCensus": 754,
     "currentEditionsBeforeBatch": 580,
-    "scopeAsOf": "2026-11-11T02:53:12.314745+00:00",
-    "scope": "Original same-day complete national API inventory, with all Act-containing classifications replaced by freshly fetched Act inventory. Non-Act baseline not refreshed; no legal-currentness certification. Per-page observations are retained. API metadata is not certification of current legal force.",
-    "newlyCoveredLawIDs": 66,
+    "scopeAsOf": "2026-11-11T03:30:49.205824+00:00",
+    "scope": "Original same-day complete national API inventory, with all Act-containing classifications replaced by latest fresh Act inventory. Non-Act baseline not refreshed; no legal-currentness certification. Per-page observations are retained. API metadata is not certification of current legal force.",
+    "newlyCoveredLawIDs": 164,
     "additionalNewerEditions": 10,
     "observationScope": {
       "earliest": "2026-11-11T01:51:36.172244+00:00",
-      "latest": "2026-11-11T02:53:12.314745+00:00",
+      "latest": "2026-11-11T03:30:49.205824+00:00",
       "observations": [
         "2026-11-11T01:51:36.172244+00:00",
-        "2026-11-11T02:53:12.314745+00:00"
+        "2026-11-11T02:53:12.314745+00:00",
+        "2026-11-11T03:30:49.205824+00:00"
       ],
       "meaning": "Per-document dated API metadata observations; no certification of current legal force."
     },
-    "baselineMeaning": "currentEditionsBeforeBatch=580 is the original pre-JP02-series current-edition baseline, not the prior incremental batch. newlyCoveredLawIDs and additionalNewerEditions are cumulative across JP02 batches."
+    "baselineMeaning": "currentEditionsBeforeBatch=580 is the original pre-JP02-series current-edition baseline, not the prior incremental batch. newlyCoveredLawIDs and additionalNewerEditions are cumulative across JP02 batches.",
+    "incrementalBatch": {
+      "newlyCoveredLawIDs": 98,
+      "additionalNewerEditions": 0,
+      "previousUniqueLawIDs": 656,
+      "previousEditionPages": 666
+    }
   }
 }
