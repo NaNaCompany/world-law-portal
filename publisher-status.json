@@ -8,13 +8,25 @@
   "images": 0,
   "pdfs": 0,
   "complete": false,
-  "aggregateAdditionalForeignDocuments": 2673,
+  "aggregateAdditionalForeignDocuments": 2702,
   "localLawDocuments": 2517,
-  "aggregateLawDocuments": 2707,
+  "aggregateLawDocuments": 2736,
   "localPublisherTagPages": 8340,
   "localKoreanLawDocuments": 0,
   "koreanDocumentsScope": "aggregate inventory, locally represented by unchanged redirects",
   "jp190RedirectPages": 190,
   "routingManifest": "jp190-routes.json",
-  "fullSplitComplete": false
+  "fullSplitComplete": false,
+  "externalLawDocuments": 219,
+  "externalJp02Documents": 29,
+  "japaneseEditionCoverage": {
+    "uniqueLawIDs": 609,
+    "editionPages": 619,
+    "currentEditionsMatchedToCensus": 609,
+    "currentEditionsBeforeBatch": 580,
+    "scopeAsOf": "2026-11-11T01:51:36.172244+00:00",
+    "scope": "Current-edition match against dated official census metadata, not a complete-text or legal-force certification",
+    "newlyCoveredLawIDs": 19,
+    "additionalNewerEditions": 10
+  }
 }

@@ -29,15 +29,15 @@
     "world-law-kr-acts",
     "world-law-kr-orders"
   ],
-  "lastAdditionAt": "2026-11-09T23:58:47Z",
-  "additionsCatalogDocuments": 356,
-  "aggregateAdditionalForeignDocuments": 2673,
+  "lastAdditionAt": "2026-11-11T02:07:53.919902+00:00",
+  "additionsCatalogDocuments": 385,
+  "aggregateAdditionalForeignDocuments": 2702,
   "localLawDocuments": 2517,
   "externalJp190Documents": 190,
-  "aggregateLawDocuments": 2707,
+  "aggregateLawDocuments": 2736,
   "localAdditionsCatalogDocuments": 166,
-  "externalAdditionsCatalogDocuments": 190,
-  "aggregateAdditionsCatalogDocuments": 356,
+  "externalAdditionsCatalogDocuments": 219,
+  "aggregateAdditionsCatalogDocuments": 385,
   "localCanonicalPages": 2522,
   "localHtmlPages": 8340,
   "localRedirectPages": 5818,
@@ -56,5 +56,17 @@
     "pages": 194,
     "articles": 190
   },
-  "fullSplitComplete": false
+  "fullSplitComplete": false,
+  "externalLawDocuments": 219,
+  "externalJp02Documents": 29,
+  "japaneseEditionCoverage": {
+    "uniqueLawIDs": 609,
+    "editionPages": 619,
+    "currentEditionsMatchedToCensus": 609,
+    "currentEditionsBeforeBatch": 580,
+    "scopeAsOf": "2026-11-11T01:51:36.172244+00:00",
+    "scope": "Current-edition match against dated official census metadata, not a complete-text or legal-force certification",
+    "newlyCoveredLawIDs": 19,
+    "additionalNewerEditions": 10
+  }
 }

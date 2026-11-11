@@ -36,19 +36,30 @@
       "status": "partial",
       "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
       "rights": "https://laws.e-gov.go.jp/law/345AC0000000048",
-      "addedDocuments": 190,
-      "addedDocumentScope": "The selected190 corrected partial-text snapshots have canonical pages in world-law-jp-01. The other400 existing Japanese snapshots retain their portal URLs. No complete/current-law certification.",
+      "addedDocuments": 219,
+      "addedDocumentScope": "190 corrected snapshots in JP01 plus29 selected editions in JP02:19 newly covered laws and10 additional newer editions. All400 existing root Japanese articles remain; earlier editions keep their original URLs. Figures, tables and formulas are omitted with notices; one JP02 official source is itself an excerpt. No complete national corpus or legal-force certification.",
       "additionsCatalog": "additions-catalog.json",
       "localLawDocuments": 400,
-      "externalLawDocuments": 190,
-      "aggregateLawDocuments": 590,
+      "externalLawDocuments": 219,
+      "aggregateLawDocuments": 619,
       "localAddedDocuments": 0,
-      "externalAddedDocuments": 190,
+      "externalAddedDocuments": 219,
       "canonicalRepositories": [
         "world-law-portal",
-        "world-law-jp-01"
+        "world-law-jp-01",
+        "world-law-jp-02"
       ],
-      "routingManifest": "jp190-routes.json"
+      "routingManifest": "jp190-routes.json",
+      "editionCoverage": {
+        "uniqueLawIDs": 609,
+        "editionPages": 619,
+        "currentEditionsMatchedToCensus": 609,
+        "currentEditionsBeforeBatch": 580,
+        "scopeAsOf": "2026-11-11T01:51:36.172244+00:00",
+        "scope": "Current-edition match against dated official census metadata, not a complete-text or legal-force certification",
+        "newlyCoveredLawIDs": 19,
+        "additionalNewerEditions": 10
+      }
     },
     {
       "country": "CN",
