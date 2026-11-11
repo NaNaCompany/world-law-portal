@@ -39,3 +39,9 @@ The largest previously available blob is reused only if its exact SHA matches th
 API availability and authorization must be checked before execution. Stop on any error, denial, unexpected SHA or uncertain outcome. Check uncertain results before retrying; do not change routes or tools to bypass a denial. Creating objects alone does not publish a site. Commit/ref compare-and-swap, the exact Pages revision, live article/canonical checks and desktop/mobile browser QA are separate steps. No permission expansion or domain/security changes are included.
 
 Historical file fingerprints contain source-commit and manifest metadata. A newly reviewed commit can legitimately yield a different public fingerprint even when the law text is identical. Do not falsify commit or review fields to force an old hash.
+
+### Staging recovery checkpoints
+
+The transfer plan interleaves a small batch of whole-file blob requests with its expected Git tree, by default at most 20 early files per tree. Law HTML and required assets come first. The original bootstrap README remains unchanged in intermediate trees; complete indexes, sitemap, catalogues and publication metadata appear only in the final tree. All final files stay byte-identical to the reviewed site.
+
+Each successful expected tree has an explicit cumulative file list and a suggested `staging/corrected-jp190` checkpoint. Intermediate commits must be described as partial and not deployed. This tool does not create commits or update that branch. Final main/ref movement and Pages deployment remain prohibited until the complete 208-file tree and all review gates pass. Raw source archives, audit notes and private reports are excluded from every checkpoint.

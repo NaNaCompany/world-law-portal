@@ -63,6 +63,11 @@ class IntegrationTests(unittest.TestCase):
    files,_=files_digest(release/'sites'/REPO);review={'passed':True,'filesSha256':files,'siteRelativeFileManifestSha256':sha(json.dumps(files,sort_keys=True,separators=(',',':')).encode())};writejson(root/'review.json',review);f=freeze(release,source,root/'review.json','a'*40);self.assertEqual(f['files'],208)
    # Force whole-file blob path with small threshold, never split a file.
    plan=prepare(release,root/'transfer','a'*40,EMPTY_TREE_STEP,250*1024,1024);self.assertGreater(plan['blobRequests'],0);self.assertGreater(plan['treeRequests'],0);self.assertFalse(plan['externalWritesPerformed']);self.assertFalse(plan['historicalComparison']['treeMatches']);self.assertEqual(plan['finalFileCount'],208)
+   trees=[x for x in plan['requests'] if x['kind']=='create-tree'];blobops=[x for x in plan['requests'] if x['kind']=='create-blob'];self.assertLess(trees[0]['step'],blobops[-1]['step']);self.assertEqual(trees[-1]['stageRole'],'complete-local-tree-not-deployed')
+   completion=set(plan['completionPathsOnlyInFinalTree'])
+   for tree in trees[:-1]:
+    cumulative={x['path']:x['sha'] for x in tree['cumulativeFiles']};self.assertEqual(set(cumulative)&completion,{'README.md'});self.assertEqual(cumulative['README.md'],OLD_README);self.assertEqual(tree['stageRole'],'partial-not-deployed');self.assertLessEqual(tree['entryCount'],20)
+   self.assertEqual(set(trees[-1]['paths']),completion);self.assertFalse(plan['stagingBranchUpdatesPerformed'])
    for step in plan['requests']:
     payload=(root/'transfer'/step['requestPath']).read_bytes();self.assertTrue(payload.isascii());self.assertEqual(sha(payload),step['requestSha256']);obj=json.loads(payload);wire=encode(obj);self.assertEqual(len(wire),step['utf8WireBytes'])
     if step['kind']=='create-tree':self.assertLessEqual(len(wire)+65536,250*1024)
