@@ -1,3 +1,5 @@
+import {blockLegacyMutation} from './root190-route-guard.mjs';
+await blockLegacyMutation(new URL('../jp190-routes.json',import.meta.url),"mark-law-structure-review.mjs");
 // Publish explicit review notices without altering statutory source text.
 import fs from 'node:fs/promises';
 import path from 'node:path';

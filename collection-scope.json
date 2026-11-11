@@ -37,8 +37,18 @@
       "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
       "rights": "https://laws.e-gov.go.jp/law/345AC0000000048",
       "addedDocuments": 190,
-      "addedDocumentScope": "Only individually listed original-language source snapshots in additions-catalog.json; not the full national corpus, not a certified statement of current force.",
-      "additionsCatalog": "additions-catalog.json"
+      "addedDocumentScope": "The selected190 corrected partial-text snapshots have canonical pages in world-law-jp-01. The other400 existing Japanese snapshots retain their portal URLs. No complete/current-law certification.",
+      "additionsCatalog": "additions-catalog.json",
+      "localLawDocuments": 400,
+      "externalLawDocuments": 190,
+      "aggregateLawDocuments": 590,
+      "localAddedDocuments": 0,
+      "externalAddedDocuments": 190,
+      "canonicalRepositories": [
+        "world-law-portal",
+        "world-law-jp-01"
+      ],
+      "routingManifest": "jp190-routes.json"
     },
     {
       "country": "CN",
@@ -242,5 +252,10 @@
   "pdfsProvided": false,
   "sourcePdfCopiesDisposed": true,
   "additionsCatalog": "additions-catalog.json",
-  "additionsAsOf": "2026-11-09T23:58:47Z"
+  "additionsAsOf": "2026-11-09T23:58:47Z",
+  "jp190Transition": {
+    "routingMode": "partial-jp190-external",
+    "routingManifest": "jp190-routes.json",
+    "fullSplitComplete": false
+  }
 }

@@ -1,3 +1,5 @@
+import {isPartialRoot} from './root190-route-guard.mjs';
+if(await isPartialRoot(new URL('../jp190-routes.json',import.meta.url))){const module=await import('./validate-jp190-transition.mjs');await module.validateRoot190();process.exit(0);}
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import assert from 'node:assert/strict';

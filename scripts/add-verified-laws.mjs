@@ -1,3 +1,5 @@
+import {blockLegacyMutation} from './root190-route-guard.mjs';
+await blockLegacyMutation(new URL('../jp190-routes.json',import.meta.url),"add-verified-laws.mjs");
 // Add complete, independently checked original-language source text to the existing portal.
 // Input receipts stay outside this published repository. Only public provenance is retained.
 import fs from 'node:fs/promises';

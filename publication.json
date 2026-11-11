@@ -3,7 +3,7 @@
   "asOf": "2026-11-09",
   "publicBase": "https://nanalab.kr/world-law-portal/",
   "htmlPages": 8340,
-  "sitemapUrls": 2712,
+  "sitemapUrls": 2522,
   "koreanCurrentLawTexts": 5628,
   "koreanOfficialInventory": 5628,
   "koreanPartialTexts": 222,
@@ -21,7 +21,7 @@
     "es"
   ],
   "publisher": "NaNaCompany",
-  "additionalForeignDocuments": 2673,
+  "additionalForeignDocuments": 2483,
   "withdrawnForeignDocuments": 23,
   "koreanCurrentLawTextsOnMain": 0,
   "koreanRedirects": 5628,
@@ -30,5 +30,31 @@
     "world-law-kr-orders"
   ],
   "lastAdditionAt": "2026-11-09T23:58:47Z",
-  "additionsCatalogDocuments": 356
+  "additionsCatalogDocuments": 356,
+  "aggregateAdditionalForeignDocuments": 2673,
+  "localLawDocuments": 2517,
+  "externalJp190Documents": 190,
+  "aggregateLawDocuments": 2707,
+  "localAdditionsCatalogDocuments": 166,
+  "externalAdditionsCatalogDocuments": 190,
+  "aggregateAdditionsCatalogDocuments": 356,
+  "localCanonicalPages": 2522,
+  "localHtmlPages": 8340,
+  "localRedirectPages": 5818,
+  "localNavigationPages": 5,
+  "jp190CanonicalRepository": "world-law-jp-01",
+  "jp190CanonicalSitemap": "https://nanalab.kr/world-law-jp-01/sitemap.xml",
+  "routingManifest": "jp190-routes.json",
+  "jp190RoutingMode": "partial-jp190-external",
+  "jp190ChildDeploymentReceipt": {
+    "commit": "36f9a13ea6851e0257927a488a532bf178dd2d29",
+    "tree": "b5359ee1b2ca5cd97201da2879fd81d3eb38719f",
+    "checkedAt": "2026-11-11T01:09:56.913887+00:00",
+    "runId": 42935597218,
+    "runUrl": "https://github.com/NaNaCompany/world-law-jp-01/actions/runs/42935597218",
+    "proofSha256": "bcfd7889c2ad5c66c783b3a47de9ea4819964d6291e1ab5fc307a45b2ceba4d4",
+    "pages": 194,
+    "articles": 190
+  },
+  "fullSplitComplete": false
 }

@@ -1,3 +1,5 @@
+import {blockLegacyMutation} from './root190-route-guard.mjs';
+await blockLegacyMutation(new URL('../jp190-routes.json',import.meta.url),"update-law-provenance.mjs");
 // Apply reviewed public provenance corrections without changing a legal text or navigation.
 import fs from 'node:fs/promises';
 import path from 'node:path';

@@ -3,9 +3,18 @@
   "koreanDocuments": 5628,
   "koreanInventory": 5628,
   "koreanPartial": 222,
-  "additionalForeignDocuments": 2673,
+  "additionalForeignDocuments": 2483,
   "withdrawnForeignDocuments": 23,
   "images": 0,
   "pdfs": 0,
-  "complete": false
+  "complete": false,
+  "aggregateAdditionalForeignDocuments": 2673,
+  "localLawDocuments": 2517,
+  "aggregateLawDocuments": 2707,
+  "localPublisherTagPages": 8340,
+  "localKoreanLawDocuments": 0,
+  "koreanDocumentsScope": "aggregate inventory, locally represented by unchanged redirects",
+  "jp190RedirectPages": 190,
+  "routingManifest": "jp190-routes.json",
+  "fullSplitComplete": false
 }
