@@ -1,0 +1,10 @@
+import fs from 'node:fs';import path from 'node:path';import {fileURLToPath} from 'node:url';import test from 'node:test';import assert from 'node:assert/strict';import {assertCounts,assertRouting} from './root-inventory-adapter.mjs';
+const w=path.dirname(fileURLToPath(import.meta.url)),r=path.join(w,'root-integration/site');const read=p=>JSON.parse(fs.readFileSync(path.join(r,p),'utf8'));const fixture=()=>({registry:read('additions-catalog.json'),pub:read('publication.json'),status:read('publisher-status.json'),localLaws:2517,htmlPages:8340,canonicalPages:2522,jpRedirects:190,krRedirects:5628,verifiedChildRecords:JSON.parse(fs.readFileSync(path.join(w,'release/sites/world-law-jp-02/document-manifest.json'),'utf8')).documents});
+test('219external with immutable190routes passes',()=>{assert.equal(assertCounts(fixture()).externalLaws,219);const f=fixture();assert.equal(assertRouting(fs.readFileSync(path.join(r,'jp190-routes.json'),'utf8'),f.registry).size,190)});
+test('missing actual child inventory rejects',()=>{const f=fixture();f.verifiedChildRecords=[];assert.throws(()=>assertCounts(f))});
+test('unreviewed child owner rejects',()=>{const f=fixture();f.registry.documents.at(-1).repository='foreign';assert.throws(()=>assertCounts(f))});
+test('child provenance drift rejects',()=>{const f=fixture();f.registry.documents.at(-1).textSha256='0'.repeat(64);assert.throws(()=>assertCounts(f))});
+test('invented child root redirect rejects',()=>{const f=fixture();f.registry.documents.at(-1).rootRedirect={};assert.throws(()=>assertCounts(f))});
+test('extra route count rejects',()=>{const f=fixture();f.jpRedirects=219;assert.throws(()=>assertCounts(f))});
+test('frozen190 route bytes reject alteration',()=>{const f=fixture();assert.throws(()=>assertRouting(fs.readFileSync(path.join(r,'jp190-routes.json'),'utf8')+' ',f.registry))});
+test('stale aggregate count rejects',()=>{const f=fixture();f.pub.aggregateLawDocuments=2707;assert.throws(()=>assertCounts(f))});
