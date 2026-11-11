@@ -40,7 +40,7 @@ def walk(n,path='/law_full_text',parent=None):
 
 def validate(tree):
  require(isinstance(tree,dict) and tree.get('tag')=='Law','Expected law_full_text Law root')
- counts=Counter();attrs=Counter();leaves=[];nodes=[];issues=[]
+ counts=Counter();attrs=Counter();leaves=[];nodes=[];issues=[];by_path={}
  for path,n,parent in walk(tree):
   if isinstance(n,str):
    require(not any(ord(c)<32 and c not in '\n\r\t' for c in n),'Unsupported text control character at '+path)
@@ -58,6 +58,10 @@ def validate(tree):
    if k=='Function':require(v in ['main','proviso'],'Unsupported sentence function')
    if k=='Type':require(v in ['New','Amend'],'Unsupported supplement type')
    attrs[tag,k]+=1
+  if tag=='TableRow':require(by_path.get(parent,{}).get('tag')=='Table','TableRow outside Table')
+  if tag=='TableColumn':require(by_path.get(parent,{}).get('tag')=='TableRow','TableColumn outside TableRow')
+  if tag=='Fig':require(not any(ord(c)<32 and c not in '\n\r\t' for c in a.get('src','')),'Unsupported figure identifier control character')
+  by_path[path]=n
   if tag=='Fig':issues.append({'kind':'withheld-figure','path':path,'src':a.get('src','')})
   if tag=='MainProvision' and a.get('Extract')=='true':issues.append({'kind':'official-main-excerpt','path':path})
   if tag=='Paragraph' and a.get('OldNum')=='true':
