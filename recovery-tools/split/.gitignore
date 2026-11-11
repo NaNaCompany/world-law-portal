@@ -1,0 +1,6 @@
+__pycache__/
+*.py[cod]
+.selftest/
+SELFTEST.log
+PUBLIC-CODE-FILES.json
+recovery-test-report.json
