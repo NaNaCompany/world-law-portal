@@ -2,7 +2,7 @@
 
 These tools prepare a **local candidate for 190 corrected Japanese documents only**. They do not deploy, change a remote repository, or complete the full multi-repository migration.
 
-The code was reconstructed after a workspace loss. Byte identity with the previous implementation is **not verified**. The 16 synthetic tests pass, including a mock 190-document build, validation, packing, freeze, and small-request Git transfer plan. The restored code still requires fresh review against the actual 190 documents before any publication.
+The code was reconstructed after a workspace loss. Byte identity with the previous implementation is **not verified**. The 17 synthetic tests pass, including a mock 190-document build, validation, packing, freeze, and small-request Git transfer plan. The restored code still requires fresh review against the actual 190 documents before any publication.
 
 ## Files
 
@@ -27,6 +27,8 @@ The phase1 builder requires a clean committed source checkout, a SHA-pinned mani
 Run the builder only with `--enable-reviewed-phase1` and explicit `--source`, `--jp-manifest`, `--expected-manifest-sha256`, `--readiness-proof`, and a new `--output` outside the source. The optional base proof must describe real HTTPS bootstrap evidence, not a successful content deployment. Then run the phase1 validator, an independent review, the packer and the freezer.
 
 The legal article bytes are preserved. Necessary navigation, canonical and asset changes occur outside the article. JP190 links go directly to the child; other laws retain existing portal destinations. Unknown routes fail closed. Four interface-language indexes and exactly 194 canonical sitemap URLs are generated. Figures, formulas and tables are excluded; source, rights, edition, omission notices and publisher tags remain intact. The source and hub are not modified.
+
+Static public metadata describes the build scope, source snapshot and counts. It contains no `publicationState` or `published` assertion. Actual deployment status is verified separately from the exact remote revision, Pages run and live HTTP/browser checks. Private build receipts retain their truthful creation-time state.
 
 Every output explicitly says `phase=jp190-only` and `fullSplitComplete=false`. Source totals are observed honestly. The unavailable full-split corpus and full builder are not certified by this phase.
 

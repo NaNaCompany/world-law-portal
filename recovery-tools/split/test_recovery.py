@@ -3,7 +3,7 @@ import argparse,json,subprocess,tempfile,unittest
 from pathlib import Path
 from build_release import ROOT_BASE,LANGS,sha,write,writejson,page,splitarticle,files_digest,git,valid_public_base,git_blob,assert_build_ready
 from phase1_jp01 import build_phase1,rewrite_phase1_shell,validate_jp_manifest,REPO
-from validate_phase1_jp01 import validate_phase1
+from validate_phase1_jp01 import validate_phase1,public_metadata_has_no_deployment_claims
 from pack_phase1_jp01 import pack_phase1
 from freeze_phase1_jp01 import freeze
 from prepare_tree_packages import prepare,pure_tree,INITIAL_TREE,EMPTY_TREE_STEP,OLD_README,EMPTY_BLOB,encode
@@ -52,6 +52,9 @@ class UnitTests(unittest.TestCase):
   with self.assertRaises(ValueError):rewrite_phase1_shell('<a href="https://nanalab.kr/world-law-europe-01/missing.html">x</a>',ROOT_BASE+'world-laws/jp-x.html','https://nanalab.kr/world-law-jp-01/',set(),set())
  def test_official_links_unchanged(self):
   s='<a href="https://laws.e-gov.go.jp/law/123">x</a>';self.assertEqual(rewrite_phase1_shell(s,ROOT_BASE+'world-laws/jp-x.html','https://nanalab.kr/world-law-jp-01/',set(),set()),s)
+ def test_public_metadata_deployment_neutral(self):
+  self.assertTrue(public_metadata_has_no_deployment_claims({'phase':'jp190-only','fullSplitComplete':False,'counts':{'localLawDocuments':190},'structuralReview':{'status':'pending'}}))
+  for bad in [{'publicationState':'local-phase1-candidate-not-published'},{'documents':[{'published':True}]},{'published':False}]:self.assertFalse(public_metadata_has_no_deployment_claims(bad))
  def test_empty_blob_hash(self):self.assertEqual(git_blob(b''),EMPTY_BLOB)
 
 class IntegrationTests(unittest.TestCase):
@@ -60,6 +63,8 @@ class IntegrationTests(unittest.TestCase):
  def test_mock190_build_validate_pack_freeze_small_transfer_and_negative(self):
   with tempfile.TemporaryDirectory(dir=TEST_ROOT) as tmp:
    root=Path(tmp);source=fixture(root);source_before,_=files_digest(source);args=argparse.Namespace(enable_reviewed_phase1=True,source=str(source),output=str(root/'release'),jp_manifest=str(root/'input.json'),expected_manifest_sha256=sha((root/'input.json').read_bytes()),readiness_proof=str(root/'proof.json'),public_base=None,base_proof=None);release=build_phase1(args);v=validate_phase1(release,source);self.assertTrue(v['passed'],v['errors']);self.assertEqual(v['htmlPages'],194);writejson(release/'audit/phase1-validation.json',v);pack_phase1(release)
+   for path in (release/'sites'/REPO).glob('*.json'):self.assertTrue(public_metadata_has_no_deployment_claims(json.loads(path.read_bytes())))
+   self.assertEqual(json.loads((release/'audit/phase1.json').read_bytes())['publicationState'],'local-phase1-candidate-not-published')
    files,_=files_digest(release/'sites'/REPO);review={'passed':True,'filesSha256':files,'siteRelativeFileManifestSha256':sha(json.dumps(files,sort_keys=True,separators=(',',':')).encode())};writejson(root/'review.json',review);f=freeze(release,source,root/'review.json','a'*40);self.assertEqual(f['files'],208)
    # Force whole-file blob path with small threshold, never split a file.
    plan=prepare(release,root/'transfer','a'*40,EMPTY_TREE_STEP,250*1024,1024);self.assertGreater(plan['blobRequests'],0);self.assertGreater(plan['treeRequests'],0);self.assertFalse(plan['externalWritesPerformed']);self.assertFalse(plan['historicalComparison']['treeMatches']);self.assertEqual(plan['finalFileCount'],208)

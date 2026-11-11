@@ -8,6 +8,12 @@ sys.dont_write_bytecode=True
 from build_release import ROOT_BASE,LANGS,TAG,ATTR,PUBLISHERS,SITEMAP_NS,sha,readjson,writejson,splitarticle,snippets,canonical,files_digest,git
 from phase1_jp01 import REPO,KR_EXISTING,rewrite_phase1_shell
 
+def public_metadata_has_no_deployment_claims(value):
+ # Static build metadata cannot certify a current deployment state.
+ if isinstance(value,dict):return not ({'publicationState','published'} & set(value)) and all(public_metadata_has_no_deployment_claims(v) for v in value.values())
+ if isinstance(value,list):return all(public_metadata_has_no_deployment_claims(v) for v in value)
+ return True
+
 def validate_phase1(release,source=None):
  root=Path(release);site=root/'sites'/REPO;audit=root/'audit';errors=[]
  def check(ok,message):
@@ -17,6 +23,8 @@ def validate_phase1(release,source=None):
  check(meta.get('phase')=='jp190-only' and meta.get('fullSplitComplete') is False and meta.get('hubUnchanged') is True and meta.get('oldPortalRedirectsGenerated') is False,'Explicit partial-phase status')
  check(len(records)==190 and len(paths)==190 and all(r.get('country')=='JP' for r in records),'Exactly190 JP records')
  files={p.relative_to(site).as_posix():p for p in site.rglob('*') if p.is_file()};total=sum(p.stat().st_size for p in files.values());check(total<100_000_000,'JP01 operational100MB cap');check('.nojekyll' in files and 'CNAME' not in files,'Nojekyll/no domain changes');check(not any(p.is_symlink() for p in site.rglob('*')),'No symlinks in published tree')
+ for local in files:
+  if local.endswith('.json'):check(public_metadata_has_no_deployment_claims(readjson(files[local])),local+': static public metadata must not claim current deployment status')
  html_files={p for p in files if p.endswith('.html')};check(len(html_files)==194 and html_files==paths|{p+'index.html' for p in LANGS.values()},'Exactly190 laws plus four indexes');ids={};links=[];canonicals=set()
  for local in sorted(html_files):
   text=files[local].read_bytes().decode();matches=re.findall(r'<link\b[^>]*rel="canonical"[^>]*href="([^"]+)"',text);expected=canonical(base,local);check(len(matches)==1 and html.unescape(matches[0])==expected,local+': unique self canonical');canonicals.add(expected);check('http-equiv="refresh"' not in text,local+': child must not be a redirect')

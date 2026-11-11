@@ -1,0 +1,5 @@
+__pycache__/
+.selftest/
+*.pyc
+*.log
+PUBLIC-CODE-FILES.json
