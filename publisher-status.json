@@ -8,42 +8,43 @@
   "images": 0,
   "pdfs": 0,
   "complete": false,
-  "aggregateAdditionalForeignDocuments": 2847,
+  "aggregateAdditionalForeignDocuments": 2867,
   "localLawDocuments": 2517,
-  "aggregateLawDocuments": 2881,
+  "aggregateLawDocuments": 2901,
   "localPublisherTagPages": 8340,
   "localKoreanLawDocuments": 0,
   "koreanDocumentsScope": "aggregate inventory, locally represented by unchanged redirects",
   "jp190RedirectPages": 190,
   "routingManifest": "jp190-routes.json",
   "fullSplitComplete": false,
-  "externalLawDocuments": 364,
-  "externalJp02Documents": 174,
+  "externalLawDocuments": 384,
+  "externalJp02Documents": 194,
   "japaneseEditionCoverage": {
-    "uniqueLawIDs": 754,
-    "editionPages": 764,
-    "currentEditionsMatchedToCensus": 754,
+    "uniqueLawIDs": 774,
+    "editionPages": 784,
+    "currentEditionsMatchedToCensus": 774,
     "currentEditionsBeforeBatch": 580,
-    "scopeAsOf": "2026-11-11T03:30:49.205824+00:00",
-    "scope": "Original same-day complete national API inventory, with all Act-containing classifications replaced by latest fresh Act inventory. Non-Act baseline not refreshed; no legal-currentness certification. Per-page observations are retained. API metadata is not certification of current legal force.",
-    "newlyCoveredLawIDs": 164,
+    "scopeAsOf": "2026-11-11T23:53:40.055167+00:00",
+    "scope": "Dated national API baseline from 2026-11-11, with Act-containing classifications replaced by fresh Japan-date Act inventory. Non-Act baseline was NOT refreshed; neither inventory certifies legal force or national completeness. Per-page observations are retained. API metadata is not certification of current legal force.",
+    "newlyCoveredLawIDs": 184,
     "additionalNewerEditions": 10,
     "observationScope": {
       "earliest": "2026-11-11T01:51:36.172244+00:00",
-      "latest": "2026-11-11T03:30:49.205824+00:00",
+      "latest": "2026-11-11T23:53:40.055167+00:00",
       "observations": [
         "2026-11-11T01:51:36.172244+00:00",
         "2026-11-11T02:53:12.314745+00:00",
-        "2026-11-11T03:30:49.205824+00:00"
+        "2026-11-11T03:30:49.205824+00:00",
+        "2026-11-11T23:53:40.055167+00:00"
       ],
       "meaning": "Per-document dated API metadata observations; no certification of current legal force."
     },
     "baselineMeaning": "currentEditionsBeforeBatch=580 is the original pre-JP02-series current-edition baseline, not the prior incremental batch. newlyCoveredLawIDs and additionalNewerEditions are cumulative across JP02 batches.",
     "incrementalBatch": {
-      "newlyCoveredLawIDs": 98,
+      "newlyCoveredLawIDs": 20,
       "additionalNewerEditions": 0,
-      "previousUniqueLawIDs": 656,
-      "previousEditionPages": 666
+      "previousUniqueLawIDs": 754,
+      "previousEditionPages": 764
     }
   }
 }
