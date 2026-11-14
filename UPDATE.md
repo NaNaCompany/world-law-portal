@@ -25,3 +25,9 @@
 - Connected only after child ed8d108837161e6826223292603edf47311a6e7d was Pages built and 68 new/changed public files and preserved-page samples matched committed bytes. Previous unchanged child bytes retain their prior public proof and Git hashes.
 - Japanese collection: 894 distinct law IDs / 904 editions. Current-force, national completeness and Google indexing are not guaranteed. Official Act inventory freshly fetched for this batch at 2026-11-14T06:01:15.276334+00:00. Previous document observations not refreshed.
 - All original root/JP01 law HTML and existing routes preserved. Four-language lists and provenance counters updated; root canonical sitemap unchanged. Prior 264 child provenance records retain an additional exact hash assertion.
+
+## 2026-11-14 — Connect next 100 verified Japanese laws
+
+- Connected only after child f1f3f2fbfea123b24969b5a3fc4999697fa0efbd was Pages built and 118 new/changed public files and preserved-page samples matched committed bytes. Previous unchanged child bytes retain their prior public proof and Git hashes.
+- Japanese collection: 994 distinct law IDs / 1004 editions. Current-force, national completeness and Google indexing are not guaranteed. Official Act inventory freshly fetched for this batch at 2026-11-14T06:16:17.506799+00:00. Previous document observations not refreshed.
+- All original root/JP01 law HTML and existing routes preserved. Four-language lists and provenance counters updated; root canonical sitemap unchanged. Prior 314 child provenance records retain an additional exact hash assertion.
