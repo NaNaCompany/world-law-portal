@@ -36,14 +36,14 @@
       "status": "partial",
       "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
       "rights": "https://laws.e-gov.go.jp/law/345AC0000000048",
-      "addedDocuments": 384,
-      "addedDocumentScope": "190 corrected snapshots in JP01 plus 194 selected editions in JP02. All400 existing root Japanese articles and earlier URLs remain. Per-page observation dates and original excerpt notices are preserved. Tables, figures and formulas are omitted with notices; not a complete national corpus or legal-force certification.",
+      "addedDocuments": 404,
+      "addedDocumentScope": "190 corrected snapshots in JP01 plus 214 selected editions in JP02. All 400 existing root Japanese articles and earlier URLs remain. Per-page observation dates and original excerpt notices are preserved. Tables, figures and formulas are omitted with notices; not a complete national corpus or legal-force certification.",
       "additionsCatalog": "additions-catalog.json",
       "localLawDocuments": 400,
-      "externalLawDocuments": 384,
-      "aggregateLawDocuments": 784,
+      "externalLawDocuments": 404,
+      "aggregateLawDocuments": 804,
       "localAddedDocuments": 0,
-      "externalAddedDocuments": 384,
+      "externalAddedDocuments": 404,
       "canonicalRepositories": [
         "world-law-portal",
         "world-law-jp-01",
@@ -51,22 +51,23 @@
       ],
       "routingManifest": "jp190-routes.json",
       "editionCoverage": {
-        "uniqueLawIDs": 774,
-        "editionPages": 784,
-        "currentEditionsMatchedToCensus": 774,
+        "uniqueLawIDs": 794,
+        "editionPages": 804,
+        "currentEditionsMatchedToCensus": 794,
         "currentEditionsBeforeBatch": 580,
-        "scopeAsOf": "2026-11-11T23:53:40.055167+00:00",
-        "scope": "Dated national API baseline from 2026-11-11, with Act-containing classifications replaced by fresh Japan-date Act inventory. Non-Act baseline was NOT refreshed; neither inventory certifies legal force or national completeness. Per-page observations are retained. API metadata is not certification of current legal force.",
-        "newlyCoveredLawIDs": 184,
+        "scopeAsOf": "2026-11-14T04:27:23.267324+00:00",
+        "scope": "Existing dated national baseline and per-document observations retained; 20 newly covered Act revisions matched to the official Act inventory dated 2026-11-14. Prior documents and non-Act inventory were not refreshed. Counts are not a single-date certification of current legal force or national completeness.",
+        "newlyCoveredLawIDs": 204,
         "additionalNewerEditions": 10,
         "observationScope": {
           "earliest": "2026-11-11T01:51:36.172244+00:00",
-          "latest": "2026-11-11T23:53:40.055167+00:00",
+          "latest": "2026-11-14T04:27:23.267324+00:00",
           "observations": [
             "2026-11-11T01:51:36.172244+00:00",
             "2026-11-11T02:53:12.314745+00:00",
             "2026-11-11T03:30:49.205824+00:00",
-            "2026-11-11T23:53:40.055167+00:00"
+            "2026-11-11T23:53:40.055167+00:00",
+            "2026-11-14T04:27:23.267324+00:00"
           ],
           "meaning": "Per-document dated API metadata observations; no certification of current legal force."
         },
@@ -74,8 +75,8 @@
         "incrementalBatch": {
           "newlyCoveredLawIDs": 20,
           "additionalNewerEditions": 0,
-          "previousUniqueLawIDs": 754,
-          "previousEditionPages": 764
+          "previousUniqueLawIDs": 774,
+          "previousEditionPages": 784
         }
       }
     },
@@ -281,7 +282,7 @@
   "pdfsProvided": false,
   "sourcePdfCopiesDisposed": true,
   "additionsCatalog": "additions-catalog.json",
-  "additionsAsOf": "2026-11-09T23:58:47Z",
+  "additionsAsOf": "2026-11-14T04:42:01.138768+00:00",
   "jp190Transition": {
     "routingMode": "partial-jp190-external",
     "routingManifest": "jp190-routes.json",

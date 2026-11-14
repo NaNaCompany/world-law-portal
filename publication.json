@@ -1,6 +1,6 @@
 {
   "schemaVersion": 1,
-  "asOf": "2026-11-09",
+  "asOf": "2026-11-14",
   "publicBase": "https://nanalab.kr/world-law-portal/",
   "htmlPages": 8340,
   "sitemapUrls": 2522,
@@ -29,15 +29,15 @@
     "world-law-kr-acts",
     "world-law-kr-orders"
   ],
-  "lastAdditionAt": "2026-11-11T23:55:26.719854+00:00",
-  "additionsCatalogDocuments": 550,
-  "aggregateAdditionalForeignDocuments": 2867,
+  "lastAdditionAt": "2026-11-14T04:42:01.138768+00:00",
+  "additionsCatalogDocuments": 570,
+  "aggregateAdditionalForeignDocuments": 2887,
   "localLawDocuments": 2517,
   "externalJp190Documents": 190,
-  "aggregateLawDocuments": 2901,
+  "aggregateLawDocuments": 2921,
   "localAdditionsCatalogDocuments": 166,
-  "externalAdditionsCatalogDocuments": 384,
-  "aggregateAdditionsCatalogDocuments": 550,
+  "externalAdditionsCatalogDocuments": 404,
+  "aggregateAdditionsCatalogDocuments": 570,
   "localCanonicalPages": 2522,
   "localHtmlPages": 8340,
   "localRedirectPages": 5818,
@@ -57,25 +57,26 @@
     "articles": 190
   },
   "fullSplitComplete": false,
-  "externalLawDocuments": 384,
-  "externalJp02Documents": 194,
+  "externalLawDocuments": 404,
+  "externalJp02Documents": 214,
   "japaneseEditionCoverage": {
-    "uniqueLawIDs": 774,
-    "editionPages": 784,
-    "currentEditionsMatchedToCensus": 774,
+    "uniqueLawIDs": 794,
+    "editionPages": 804,
+    "currentEditionsMatchedToCensus": 794,
     "currentEditionsBeforeBatch": 580,
-    "scopeAsOf": "2026-11-11T23:53:40.055167+00:00",
-    "scope": "Dated national API baseline from 2026-11-11, with Act-containing classifications replaced by fresh Japan-date Act inventory. Non-Act baseline was NOT refreshed; neither inventory certifies legal force or national completeness. Per-page observations are retained. API metadata is not certification of current legal force.",
-    "newlyCoveredLawIDs": 184,
+    "scopeAsOf": "2026-11-14T04:27:23.267324+00:00",
+    "scope": "Existing dated national baseline and per-document observations retained; 20 newly covered Act revisions matched to the official Act inventory dated 2026-11-14. Prior documents and non-Act inventory were not refreshed. Counts are not a single-date certification of current legal force or national completeness.",
+    "newlyCoveredLawIDs": 204,
     "additionalNewerEditions": 10,
     "observationScope": {
       "earliest": "2026-11-11T01:51:36.172244+00:00",
-      "latest": "2026-11-11T23:53:40.055167+00:00",
+      "latest": "2026-11-14T04:27:23.267324+00:00",
       "observations": [
         "2026-11-11T01:51:36.172244+00:00",
         "2026-11-11T02:53:12.314745+00:00",
         "2026-11-11T03:30:49.205824+00:00",
-        "2026-11-11T23:53:40.055167+00:00"
+        "2026-11-11T23:53:40.055167+00:00",
+        "2026-11-14T04:27:23.267324+00:00"
       ],
       "meaning": "Per-document dated API metadata observations; no certification of current legal force."
     },
@@ -83,8 +84,16 @@
     "incrementalBatch": {
       "newlyCoveredLawIDs": 20,
       "additionalNewerEditions": 0,
-      "previousUniqueLawIDs": 754,
-      "previousEditionPages": 764
+      "previousUniqueLawIDs": 774,
+      "previousEditionPages": 784
     }
+  },
+  "jp02LatestDeploymentReceipt": {
+    "commit": "e0138dfdb9322aa3c700b2e2ca650e7bf96a3c68",
+    "checkedAt": "2026-11-14T04:37:29.719345+00:00",
+    "publicFilesChecked": 231,
+    "newLawPages": 20,
+    "allPublishedChildHtmlChecked": 218,
+    "proofSha256": "3578baee7f235d77783e536768b47b49465c615fed03d34eddbfe221bd9a5fb2"
   }
 }
