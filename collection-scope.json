@@ -36,14 +36,14 @@
       "status": "partial",
       "scope": "Verified original-language statutory snapshots are listed in the public portal and additions-catalog.json. National corpus incomplete.",
       "rights": "https://laws.e-gov.go.jp/law/345AC0000000048",
-      "addedDocuments": 604,
-      "addedDocumentScope": "190 corrected snapshots in JP01 plus 414 selected editions in JP02. All 400 existing root Japanese articles and earlier URLs remain. Individual observation dates and source excerpts are preserved. Tables, figures and formulas omitted with notices. Partial collection and reproduction, not legal-force certification.",
+      "addedDocuments": 704,
+      "addedDocumentScope": "190 corrected snapshots in JP01 plus 514 selected editions in JP02. All 400 existing root Japanese articles and earlier URLs remain. Individual observation dates and source excerpts are preserved. Tables, figures and formulas omitted with notices. Partial collection and reproduction, not legal-force certification.",
       "additionsCatalog": "additions-catalog.json",
       "localLawDocuments": 400,
-      "externalLawDocuments": 604,
-      "aggregateLawDocuments": 1004,
+      "externalLawDocuments": 704,
+      "aggregateLawDocuments": 1104,
       "localAddedDocuments": 0,
-      "externalAddedDocuments": 604,
+      "externalAddedDocuments": 704,
       "canonicalRepositories": [
         "world-law-portal",
         "world-law-jp-01",
@@ -51,17 +51,17 @@
       ],
       "routingManifest": "jp190-routes.json",
       "editionCoverage": {
-        "uniqueLawIDs": 994,
-        "editionPages": 1004,
-        "currentEditionsMatchedToCensus": 994,
+        "uniqueLawIDs": 1094,
+        "editionPages": 1104,
+        "currentEditionsMatchedToCensus": 1094,
         "currentEditionsBeforeBatch": 580,
-        "scopeAsOf": "2026-11-14T06:16:17.506799+00:00",
-        "scope": "Earlier dated national baseline and per-document observations retained. New Act snapshots match the separately observed official Act inventory dated 2026-11-14. Official Act inventory freshly fetched for this batch at 2026-11-14T06:16:17.506799+00:00. Prior documents and other law types were not refreshed. Not certification of national coverage or legal force.",
-        "newlyCoveredLawIDs": 404,
+        "scopeAsOf": "2026-11-14T06:32:46.700326+00:00",
+        "scope": "Earlier dated national baseline and per-document observations retained. New Act snapshots match the separately observed official Act inventory dated 2026-11-14. Official Act inventory freshly fetched for this batch at 2026-11-14T06:32:46.700326+00:00. Prior documents and other law types were not refreshed. Not certification of national coverage or legal force.",
+        "newlyCoveredLawIDs": 504,
         "additionalNewerEditions": 10,
         "observationScope": {
           "earliest": "2026-11-11T01:51:36.172244+00:00",
-          "latest": "2026-11-14T06:16:17.506799+00:00",
+          "latest": "2026-11-14T06:32:46.700326+00:00",
           "observations": [
             "2026-11-11T01:51:36.172244+00:00",
             "2026-11-11T02:53:12.314745+00:00",
@@ -69,7 +69,8 @@
             "2026-11-11T23:53:40.055167+00:00",
             "2026-11-14T04:27:23.267324+00:00",
             "2026-11-14T06:01:15.276334+00:00",
-            "2026-11-14T06:16:17.506799+00:00"
+            "2026-11-14T06:16:17.506799+00:00",
+            "2026-11-14T06:32:46.700326+00:00"
           ],
           "meaning": "Per-document dated API metadata observations; no certification of current legal force."
         },
@@ -77,8 +78,8 @@
         "incrementalBatch": {
           "newlyCoveredLawIDs": 100,
           "additionalNewerEditions": 0,
-          "previousUniqueLawIDs": 894,
-          "previousEditionPages": 904
+          "previousUniqueLawIDs": 994,
+          "previousEditionPages": 1004
         }
       }
     },
@@ -284,7 +285,7 @@
   "pdfsProvided": false,
   "sourcePdfCopiesDisposed": true,
   "additionsCatalog": "additions-catalog.json",
-  "additionsAsOf": "2026-11-14T06:24:04.182726+00:00",
+  "additionsAsOf": "2026-11-14T06:39:58.815180+00:00",
   "jp190Transition": {
     "routingMode": "partial-jp190-external",
     "routingManifest": "jp190-routes.json",
