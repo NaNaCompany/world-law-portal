@@ -8,35 +8,36 @@
   "images": 0,
   "pdfs": 0,
   "complete": false,
-  "aggregateAdditionalForeignDocuments": 2937,
+  "aggregateAdditionalForeignDocuments": 2987,
   "localLawDocuments": 2517,
-  "aggregateLawDocuments": 2971,
+  "aggregateLawDocuments": 3021,
   "localPublisherTagPages": 8340,
   "localKoreanLawDocuments": 0,
   "koreanDocumentsScope": "aggregate inventory, locally represented by unchanged redirects",
   "jp190RedirectPages": 190,
   "routingManifest": "jp190-routes.json",
   "fullSplitComplete": false,
-  "externalLawDocuments": 454,
-  "externalJp02Documents": 264,
+  "externalLawDocuments": 504,
+  "externalJp02Documents": 314,
   "japaneseEditionCoverage": {
-    "uniqueLawIDs": 844,
-    "editionPages": 854,
-    "currentEditionsMatchedToCensus": 844,
+    "uniqueLawIDs": 894,
+    "editionPages": 904,
+    "currentEditionsMatchedToCensus": 894,
     "currentEditionsBeforeBatch": 580,
-    "scopeAsOf": "2026-11-14T04:27:23.267324+00:00",
-    "scope": "Earlier dated national baseline and per-document observations retained. New Act snapshots match the separately observed official Act inventory dated 2026-11-14; this batch reuses the saved inventory, not a new census observation. Prior documents and other law types were not refreshed. Not certification of national coverage or legal force.",
-    "newlyCoveredLawIDs": 254,
+    "scopeAsOf": "2026-11-14T06:01:15.276334+00:00",
+    "scope": "Earlier dated national baseline and per-document observations retained. New Act snapshots match the separately observed official Act inventory dated 2026-11-14. Official Act inventory freshly fetched for this batch at 2026-11-14T06:01:15.276334+00:00. Prior documents and other law types were not refreshed. Not certification of national coverage or legal force.",
+    "newlyCoveredLawIDs": 304,
     "additionalNewerEditions": 10,
     "observationScope": {
       "earliest": "2026-11-11T01:51:36.172244+00:00",
-      "latest": "2026-11-14T04:27:23.267324+00:00",
+      "latest": "2026-11-14T06:01:15.276334+00:00",
       "observations": [
         "2026-11-11T01:51:36.172244+00:00",
         "2026-11-11T02:53:12.314745+00:00",
         "2026-11-11T03:30:49.205824+00:00",
         "2026-11-11T23:53:40.055167+00:00",
-        "2026-11-14T04:27:23.267324+00:00"
+        "2026-11-14T04:27:23.267324+00:00",
+        "2026-11-14T06:01:15.276334+00:00"
       ],
       "meaning": "Per-document dated API metadata observations; no certification of current legal force."
     },
@@ -44,16 +45,16 @@
     "incrementalBatch": {
       "newlyCoveredLawIDs": 50,
       "additionalNewerEditions": 0,
-      "previousUniqueLawIDs": 794,
-      "previousEditionPages": 804
+      "previousUniqueLawIDs": 844,
+      "previousEditionPages": 854
     }
   },
   "jp02LatestDeploymentReceipt": {
-    "commit": "27513c66a564d32c5918ae9bd6bde84a79005a3b",
-    "checkedAt": "2026-11-14T04:56:48.210820+00:00",
+    "commit": "ed8d108837161e6826223292603edf47311a6e7d",
+    "checkedAt": "2026-11-14T06:05:43.284308+00:00",
     "publicFilesChecked": 68,
     "newLawPages": 50,
     "verificationScope": "New/changed public files and unchanged-page samples. Prior unchanged public bytes are covered by the previous exact-commit verification plus Git blob preservation. All child HTML was checked statically.",
-    "proofSha256": "4985598c94dcfa347f9c0d8a61668f507b3345acb90f3344e5828a9b72f2f3b9"
+    "proofSha256": "a773b25e0bd35d182cc71a2a07da27fb929426b85c04b7a6884613429ba4dccb"
   }
 }
